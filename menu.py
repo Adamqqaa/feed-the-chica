@@ -65,6 +65,10 @@ def menu_run():
                         choose.play()
                         import settings
                         settings.settings_run()
+                    elif items[select] == 'Разработчик':
+                        choose.play()
+                        import developer
+                        developer.developer_run()
                 select = (select + selectAdd) % len(items)
                 while items[select] == '':
                     select = (select + selectAdd) % len(items)
