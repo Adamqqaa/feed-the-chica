@@ -9,9 +9,6 @@ def developer_run():
 	pygame.display.set_icon(pygame.image.load('icon.png'))
 	set_caption('Feed The Chica: Developer')
 
-	chica_settings = pygame.image.load('Спрайты/me.png')
-	chica_settings = pygame.transform.scale(chica_settings, [460, 460])
-
 	black_blur = pygame.image.load('Спрайты/black_blur.png')
 	black_blur = pygame.transform.scale(black_blur, [520, 760])
 
@@ -31,6 +28,5 @@ def developer_run():
 
 		window.blit(menu_bg, [0, 0])
 		window.blit(black_blur, [0, 0])
-		window.blit(chica_settings, [40, 330])
-		window.blit(dev_text, [0, 0])
+		window.blit(dev_text, [0, 10])
 		pygame.display.flip()

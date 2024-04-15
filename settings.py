@@ -49,15 +49,19 @@ def settings_run():
 
 				if items[select] == 'Сложность:':
 					if event.key == pygame.K_d or event.key == pygame.K_RIGHT:
-						game_mode_choose += 1
+						game_mode_choose = (game_mode_choose + 1) % len(gm)
+						items[2] = f'{gm[game_mode_choose]}'
+						itemsSelect[2] = f'{gm[game_mode_choose]}'
 					elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
-						game_mode_choose -= 1
+						game_mode_choose = (game_mode_choose - 1) % len(gm)
+						items[2] = f'{gm[game_mode_choose]}'
+						itemsSelect[2] = f'{gm[game_mode_choose]}'
 
+		select = (select + selectAdd) % len(items)
+		while items[select] == '':
 			select = (select + selectAdd) % len(items)
-			while items[select] == '':
-				select = (select + selectAdd) % len(items)
 
-			selectAdd = 0
+		selectAdd = 0
 		window.blit(menu_bg, [0, 0])
 		window.blit(black_blur, [0, 0])
 		window.blit(chica_settings, [40, 330])
